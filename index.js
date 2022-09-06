@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -45,7 +44,7 @@ app.get('/', async function(req, res) {
   const data2 = await response2.json()
   const ticketsLeft13Sept = data2.result.primary["SSOps-imp"].seats["16"].length
 
-  res.send(`<div>9 Sept (132): ${166 - ticketsLeft9Sept} billets vendus sur 166 (${ticketsLeft9Sept} restants)</div><div>13 Sept (132): ${166 - ticketsLeft13Sept} billets vendus sur 166 (${ticketsLeft13Sept} restants)</div>`);
+  res.send(`<div>9 Sept (132 AG): ${166 - ticketsLeft9Sept} billets vendus sur 166 (${ticketsLeft9Sept} restants)</div><div>13 Sept (132 AG): ${166 - ticketsLeft13Sept} billets vendus sur 166 (${ticketsLeft13Sept} restants)</div>`);
 });
 
 app.listen(port);
