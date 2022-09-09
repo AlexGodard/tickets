@@ -25,14 +25,14 @@ app.get('/', async function(req, res) {
     "method": "POST"
   });
   const data = await response.json()
-  const ticketsLeft9Sept = data.result.primary["SSOps-imp"].seats["16"].length
+  const ticketsLeft9Sept = data.result.primary["SSOps-imp"]?.seats?.["16"]?.length || 0
   const response2 = await fetch("https://billets.cfmontreal.com/info//showshop.eventInventory3?params=83fdfbfe-e1a0-4891-ba08-9a86845dc276_CFM2216IND_[object%20Object]", {
     "headers": headers,
     "body": "{\"jsonrpc\":\"2.0\",\"method\":\"showshop.eventInventory3\",\"params\":[\"83fdfbfe-e1a0-4891-ba08-9a86845dc276\",\"CFM2216IND\",{\"groupByPriceLevel\":true,\"groupByRestriction\":true,\"includeKilledSeats\":true}],\"id\":1}",
     "method": "POST"
   });
   const data2 = await response2.json()
-  const ticketsLeft13Sept = data2.result.primary["SSOps-imp"].seats["16"].length
+  const ticketsLeft13Sept = data2.result.primary["SSOps-imp"]?.seats?.["16"]?.length || 0
   const response3 = await fetch("https://billets.cfmontreal.com/info//showshop.eventInventory3?params=8b3ffd71-436c-49c5-9d1a-1ef8b167f959_CFM2215IND_[object%20Object]", {
     "headers": headers,
     "body": "{\"jsonrpc\":\"2.0\",\"method\":\"showshop.eventInventory3\",\"params\":[\"8b3ffd71-436c-49c5-9d1a-1ef8b167f959\",\"CFM2215IND\",{\"groupByPriceLevel\":true,\"groupByRestriction\":true,\"includeKilledSeats\":true}],\"id\":1}",
